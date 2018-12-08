@@ -29,9 +29,9 @@ dependencies {
 }
 
 javafx {
-    modules = [ 'javafx.controls' ]
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 // Define the main class for the application
-mainClassName = 'crypto.App'
+mainClassName = 'crypto.Main'
 
