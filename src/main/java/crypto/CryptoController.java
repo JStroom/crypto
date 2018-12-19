@@ -37,5 +37,12 @@ public class CryptoController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("initialize");
         plainTextField.setText("abcdefghijklmnopqrstuvwxyz");
+        plainTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("textfield changed from " + oldValue + " to " + newValue);
+        });
+        cipherTextField.setText("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        cipherTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("textfield changed from " + oldValue + " to " + newValue);
+        });
     }
 }
