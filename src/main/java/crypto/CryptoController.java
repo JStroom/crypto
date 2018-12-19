@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -15,27 +16,26 @@ import java.util.ResourceBundle;
 public class CryptoController implements Initializable {
 
     @FXML
-    private TableView tableViewPlainText;
+    private TextField plainTextField;
+
+    @FXML
+    private TextField cipherTextField;
+
+    public CryptoController() {
+        System.out.println("construct");
+    }
+
+
 
     @FXML
     protected void handleSubmitButtonAction(ActionEvent event) {
         System.out.println("button pressed");
-        //actiontarget.setText("Sign in button pressed");
     }
 
-    public void initTableModel() {
-        Character[] characters = {'a', 'b'};
-        List<Character> plainCipherList = Arrays.asList(characters);
-        ObservableList<Character> plainCiphers = FXCollections.observableList(plainCipherList);
-        tableViewPlainText.setItems(plainCiphers);
-//        tableViewPlainText.setText("mytext");
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Character[] characters = {'a', 'b'};
-        List<Character> plainCipherList = Arrays.asList(characters);
-        ObservableList<Character> plainCiphers = FXCollections.observableList(plainCipherList);
-        //tableViewPlainText.setItems(plainCiphers);
+        System.out.println("initialize");
+        plainTextField.setText("abcdefghijklmnopqrstuvwxyz");
     }
 }
